@@ -38,7 +38,7 @@ jobs:
         run: cargo build
       - name: Run tests
         run: |
-          set -e
+          set -ex
           FEATURES=()
           [[ -n "$GITHUB_TOKEN" ]] && FEATURES=('--github-token' "$GITHUB_TOKEN")
           RUST_COMMIT=$(git ls-remote https://github.com/rust-lang/rust master | awk '{print $1}')
