@@ -44,7 +44,7 @@ jobs:
           RUST_COMMIT=$(git ls-remote https://github.com/rust-lang/rust master | awk '{print $1}')
           cargo run -- "${FEATURES[@]}"
           rustc +"$RUST_COMMIT" -vV
-          rustc +"$RUST_COMMIT" -vV | grep -q "$RUST_COMMIT"
+          rustc +"$RUST_COMMIT" -vV | grep "$RUST_COMMIT"
         shell: bash
 
   rustfmt:
